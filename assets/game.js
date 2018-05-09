@@ -7,8 +7,11 @@ var lettersGuessed = [];
 var computerChoice =  letters[Math.floor(Math.random() * letters.length)];
 
 document.onkeyup = function(event) {
+    //this converts their guess into a lowercase letter
     var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    //this checks if the letter is in the array index, and if it has already been used
     if (lettersGuessed.indexOf(userGuess) < 0 && letters.indexOf(userGuess) >= 0) {
+        //this logs their guess into the array
         lettersGuessed[lettersGuessed.length] = userGuess;
         guessesLeft--;
     }
